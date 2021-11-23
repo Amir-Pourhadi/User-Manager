@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/Amir-Pourhadi/User-Manager.git"
   },
-  "keywords": [],
+  "keywords": ["crud", "nodejs", "expressjs", "mongodb"],
   "author": "Amir Pourhadi",
   "license": "ISC",
   "bugs": {
