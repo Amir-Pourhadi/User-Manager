@@ -1,0 +1,21 @@
+{
+  "name": "user-manager",
+  "version": "1.0.0",
+  "description": "Simple User Manager App to Practice NodeJS, ExpressJS and MongoDB!",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amir-Pourhadi/User-Manager.git"
+  },
+  "keywords": [],
+  "author": "Amir Pourhadi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amir-Pourhadi/User-Manager/issues"
+  },
+  "homepage": "https://github.com/Amir-Pourhadi/User-Manager#readme"
+}
