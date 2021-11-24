@@ -1,5 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const morgan = require("morgan");
 
 // Create a new express application instance
 const app = express();
@@ -9,6 +10,9 @@ dotenv.config({ path: "config.env" });
 
 // The port the express app will listen on
 const port = process.env.PORT || 8080;
+
+// Log requests to the console.
+app.use(morgan("dev"));
 
 // Home page route
 app.get("/", (req, res) => {
