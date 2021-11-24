@@ -2,10 +2,10 @@
   "name": "user-manager",
   "version": "1.0.0",
   "description": "Simple User Manager App to Practice NodeJS, ExpressJS and MongoDB!",
-  "main": "lib/server.js",
+  "main": "lib/index.js",
   "scripts": {
-    "dev": "nodemon lib/server.js",
-    "start": "node lib/server.js"
+    "dev": "nodemon lib",
+    "start": "node lib"
   },
   "repository": {
     "type": "git",
