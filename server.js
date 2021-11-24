@@ -40,6 +40,11 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+// Add User Route
+app.get("/add-user", (req, res) => {
+  res.render("add-user");
+});
+
 // Start the express server
 app.listen(port, () => {
   console.log(`Server is Running on http://localhost:${port}`);
