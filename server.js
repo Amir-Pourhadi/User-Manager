@@ -37,7 +37,7 @@ fs.readdir(assets, (error, folders) => {
 
 // Home page route
 app.get("/", (req, res) => {
-  res.send("User Manager Application!");
+  res.render("index");
 });
 
 // Start the express server
