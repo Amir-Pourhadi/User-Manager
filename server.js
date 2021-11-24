@@ -18,6 +18,9 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// View engine setup
+app.set("view engine", "ejs");
+
 // Home page route
 app.get("/", (req, res) => {
   res.send("User Manager Application!");
