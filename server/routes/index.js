@@ -1,5 +1,6 @@
 const express = require("express");
 const render = require("../services/render");
+const controller = require("../controller");
 const router = express.Router();
 
 /**
@@ -22,5 +23,11 @@ router.get("/add-user", render.addUser);
  * @access Public
  */
 router.get("/update-user", render.updateUser);
+
+// API
+router.post("/api/users", controller.create);
+router.get("/api/users", controller.find);
+router.put("/api/users/:id", controller.update);
+router.delete("/api/users/:id", controller.delete);
 
 module.exports = router;
