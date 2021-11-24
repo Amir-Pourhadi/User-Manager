@@ -1,3 +1,34 @@
-<%- include("include/_header") %> 
+<%- include("include/_header") %>
+
+<main>
+  <div class="container">
+    <div class="box-nav d-flex justify-between">
+      <a href="/add-user" class="border-shadow">
+        <span class="text-gradient">New User <i class="fas fa-user" aria-hidden="true"></i></span>
+      </a>
+    </div>
+
+    <form action="/" method="post">
+      <table>
+        <caption>
+          Users Data
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%- include("include/_show") %>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</main>
 
 <%- include("include/_footer") %>
