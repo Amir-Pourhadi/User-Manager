@@ -1,7 +1,30 @@
 const User = require("../model/User");
 
 // Create and Save a new User
-exports.create = (req, res) => {};
+exports.create = (req, res) => {
+  // Validate request
+  if (!req.body) {
+    return res.status(400).send({ msg: "Content can not be empty!" });
+  }
+
+  const { name, email, gender, status } = req.body;
+
+  try {
+    // Check if user exists
+    let user = await User.findOne({ email });
+    if (user) {
+      return res.status(400).send({ msg: "User already exists!" });
+    }
+
+    // New User
+    user = new User({ name, email, gender, status });
+
+    // Save user in the database
+    await user.save();
+  } catch (err) {
+    res.status(500).send({ msg: err.message || "Server Error!" });
+  }
+};
 
 // Retrieve all Users / Retrieve a single User
 exports.find = (req, res) => {};
