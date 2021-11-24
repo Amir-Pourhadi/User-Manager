@@ -33,5 +33,12 @@
   "devDependencies": {
     "dotenv": "^10.0.0",
     "nodemon": "^2.0.15"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "delay": 2500,
+    "env": {
+      "PORT": 3000
+    }
   }
 }
