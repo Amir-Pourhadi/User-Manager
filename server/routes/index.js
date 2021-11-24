@@ -1,19 +1,26 @@
 const express = require("express");
+const render = require("../services/render");
 const router = express.Router();
 
-// Home Page Route
-router.get("/", (req, res) => {
-  res.render("index");
-});
+/**
+ * @route GET /
+ * @desc Home Page
+ * @access Public
+ */
+router.get("/", render.home);
 
-// Add User Route
-router.get("/add-user", (req, res) => {
-  res.render("add-user");
-});
+/**
+ * @route GET /add-user
+ * @desc Add User Page
+ * @access Public
+ */
+router.get("/add-user", render.addUser);
 
-// Update User Route
-router.get("/update-user", (req, res) => {
-  res.render("update-user");
-});
+/**
+ * @route GET /update-user
+ * @desc Update User Page
+ * @access Public
+ */
+router.get("/update-user", render.updateUser);
 
 module.exports = router;
