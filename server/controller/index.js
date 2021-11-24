@@ -1,7 +1,7 @@
 const User = require("../model/User");
 
 // Create and Save a new User
-exports.create = (req, res) => {
+exports.create = async (req, res) => {
   // Validate request
   if (!req.body) {
     return res.status(400).send({ msg: "Content can not be empty!" });
@@ -21,6 +21,7 @@ exports.create = (req, res) => {
 
     // Save user in the database
     await user.save();
+    res.status(200).send({ msg: "User created successfully!" });
   } catch (err) {
     res.status(500).send({ msg: err.message || "Server Error!" });
   }
