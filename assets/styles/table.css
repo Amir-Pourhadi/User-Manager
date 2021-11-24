@@ -1,0 +1,92 @@
+table {
+  border-spacing: 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+table thead {
+  color: #fff;
+  background-color: var(--dark);
+  border-color: #32383e;
+}
+
+table th,
+table td {
+  padding: 0.75em;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+table th {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+table td > a.btn {
+  padding: 0.3em 1em;
+  font-size: 1.1em;
+  margin: 0 0.2em;
+}
+
+table tr:hover {
+  background-color: #06d6a0;
+}
+
+table tr:hover td > a {
+  box-shadow: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  table {
+    display: block;
+    width: 90%;
+    margin: auto;
+  }
+
+  tbody {
+    display: block;
+  }
+
+  table caption {
+    display: block;
+    font-size: 1.3em;
+  }
+
+  table thead {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  table tr {
+    display: block;
+    border: 3px solid var(--border);
+    margin-bottom: 1.1em;
+    box-shadow: 1px 3px 10px #8b7dcf;
+    overflow: hidden;
+  }
+
+  table td {
+    display: block;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    padding-left: 50%;
+  }
+
+  table td:before {
+    content: attr(data-label);
+    position: absolute;
+    top: 25%;
+    left: 1%;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+}
