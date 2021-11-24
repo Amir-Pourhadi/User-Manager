@@ -35,7 +35,7 @@ fs.readdir(assets, (error, folders) => {
   }
 });
 
-// Home page route
+// Home Page Route
 app.get("/", (req, res) => {
   res.render("index");
 });
@@ -43,6 +43,11 @@ app.get("/", (req, res) => {
 // Add User Route
 app.get("/add-user", (req, res) => {
   res.render("add-user");
+});
+
+// Update User Route
+app.get("/update-user", (req, res) => {
+  res.render("update-user");
 });
 
 // Start the express server
