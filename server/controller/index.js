@@ -33,7 +33,20 @@ exports.find = async (req, res) => {
 };
 
 // Update a User with Id
-exports.update = (req, res) => {};
+exports.update = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const user = await User.findByIdAndUpdate(id, req.body, { useFindAndModify: false });
+
+    if (!user) {
+      return res.status(404).send({ msg: `User not found with ID: ${id}` });
+    } else {
+      res.status(200).send({ msg: "User updated successfully!" });
+    }
+  } catch (err) {
+    res.status(500).send({ msg: err.message || "Server Error!" });
+  }
+};
 
 // Delete a User with Id
 exports.delete = (req, res) => {};
