@@ -16,7 +16,7 @@ exports.create = async (req, res) => {
 
     // Save user in the database
     await user.save();
-    res.status(200).send({ msg: "User created successfully!" });
+    res.status(200).redirect("/");
   } catch (err) {
     res.status(500).send({ msg: err.message || "Server Error!" });
   }
