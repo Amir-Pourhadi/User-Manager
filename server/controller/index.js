@@ -2,14 +2,9 @@ const User = require("../model/User");
 
 // Create and Save a new User
 exports.create = async (req, res) => {
-  // Validate request
-  if (!req.body) {
-    return res.status(400).send({ msg: "Content can not be empty!" });
-  }
-
-  const { name, email, gender, status } = req.body;
-
   try {
+    const { name, email, gender, status } = req.body;
+
     // Check if user exists
     let user = await User.findOne({ email });
     if (user) {
