@@ -23,7 +23,14 @@ exports.create = async (req, res) => {
 };
 
 // Retrieve all Users / Retrieve a single User
-exports.find = (req, res) => {};
+exports.find = async (req, res) => {
+  try {
+    const users = await User.find();
+    res.status(200).send(users);
+  } catch (err) {
+    res.status(500).send({ msg: err.message || "Server Error!" });
+  }
+};
 
 // Update a User with Id
 exports.update = (req, res) => {};
