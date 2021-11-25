@@ -27,17 +27,21 @@ table th {
   text-transform: uppercase;
 }
 
+table td:not([data-label="email"], [data-label="#"])::first-letter {
+  text-transform: uppercase;
+}
+
 table td > a.btn {
   padding: 0.3em 1em;
   font-size: 1.1em;
   margin: 0 0.2em;
 }
 
-table tr:hover {
+table tbody tr:hover {
   background-color: #06d6a0;
 }
 
-table tr:hover td > a {
+table tbody tr:hover td > a {
   box-shadow: none;
 }
 
@@ -77,6 +81,7 @@ table tr:hover td > a {
     border-bottom: 1px solid var(--border);
     position: relative;
     padding-left: 50%;
+    text-transform: capitalize;
   }
 
   table td:before {
