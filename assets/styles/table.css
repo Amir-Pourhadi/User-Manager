@@ -9,6 +9,11 @@ table caption {
   margin-bottom: 0.75em;
 }
 
+table .scroll {
+  height: 10px;
+  overflow: scroll;
+}
+
 table thead {
   color: #fff;
   background-color: var(--dark);
@@ -43,6 +48,13 @@ table tbody tr:hover {
 
 table tbody tr:hover td > a {
   box-shadow: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  form[action="/"] {
+    max-height: 30em;
+    overflow: scroll;
+  }
 }
 
 @media only screen and (max-width: 1024px) {

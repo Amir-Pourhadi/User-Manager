@@ -36,8 +36,9 @@ a {
   flex-wrap: wrap;
 }
 
-.justify-between {
-  justify-content: space-between;
+.justify-around {
+  justify-content: flex-start;
+  margin-left: 2em;
 }
 
 .text-center {
