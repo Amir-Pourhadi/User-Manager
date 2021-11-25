@@ -25,8 +25,19 @@ exports.create = async (req, res) => {
 // Retrieve all Users / Retrieve a single User
 exports.find = async (req, res) => {
   try {
-    const users = await User.find();
-    res.status(200).send(users);
+    if (req.query.id) {
+      const id = req.query.id;
+      const user = await User.findById(id);
+
+      if (!user) {
+        return res.status(404).send({ msg: `User not found with ID: ${id}` });
+      } else {
+        res.status(200).send(user);
+      }
+    } else {
+      const users = await User.find();
+      res.status(200).send(users);
+    }
   } catch (err) {
     res.status(500).send({ msg: err.message || "Server Error!" });
   }
