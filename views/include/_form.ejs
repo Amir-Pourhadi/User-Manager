@@ -1,24 +1,24 @@
-<form action="/api/users" method="post">
+<form action="<%= locals.user ? "" : "/api/users" %>" method="post">
   <div class="new-user">
     <div class="form-group">
       <label for="name" class="text-light">Name</label>
-      <input type="hidden" name="id" value="" />
-      <input type="text" name="name" value="" placeholder="John Doe" />
+      <input type="hidden" name="id" value="<%= locals.user && user._id %>" />
+      <input type="text" name="name" value="<%= locals.user && user.name %>" placeholder="John Doe" />
     </div>
 
     <div class="form-group">
       <label for="email" class="text-light">Email</label>
-      <input type="text" name="email" value="" placeholder="example@gmail.com" />
+      <input type="text" name="email" value="<%= locals.user && user.email %>" placeholder="example@gmail.com" />
     </div>
 
     <div class="form-group">
       <label for="gender" class="text-light">Gender</label>
       <div class="radio inline">
-        <input type="radio" name="gender" id="male" value="male" />
+        <input type="radio" name="gender" id="male" value="male" <%= locals.user && user.gender === "male" && "checked" %> />
         <label for="male">Male</label>
       </div>
       <div class="radio inline">
-        <input type="radio" name="gender" id="female" value="female" />
+        <input type="radio" name="gender" id="female" value="female" <%= locals.user && user.gender === "female" && "checked" %> />
         <label for="female">Female</label>
       </div>
     </div>
@@ -26,11 +26,11 @@
     <div class="form-group">
       <label for="status" class="text-light">Status</label>
       <div class="radio inline">
-        <input type="radio" name="status" id="active" value="active" />
+        <input type="radio" name="status" id="active" value="active" <%= locals.user && user.status === "active" && "checked" %> />
         <label for="active">Active</label>
       </div>
       <div class="radio inline">
-        <input type="radio" name="status" id="inactive" value="inactive" />
+        <input type="radio" name="status" id="inactive" value="inactive" <%= locals.user && user.status === "inactive" && "checked" %> />
         <label for="inactive">Inactive</label>
       </div>
     </div>
