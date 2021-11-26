@@ -16,6 +16,5 @@ $("form[action='']").submit(function (event) {
 
   $.ajax(request).done(() => {
     alert("Data Updated Successfully!");
-    $(location).prop("pathname", "/");
   });
 });
