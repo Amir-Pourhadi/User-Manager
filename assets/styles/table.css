@@ -53,7 +53,7 @@ table tbody tr:hover td > a {
 @media only screen and (min-width: 1024px) {
   form[action="/"] {
     max-height: 30em;
-    overflow: scroll;
+    overflow-y: scroll;
   }
 }
 
